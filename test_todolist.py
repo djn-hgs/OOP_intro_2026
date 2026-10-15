@@ -19,7 +19,7 @@ class TestTask:
     def test_title_is_stripped(self):
         assert Task(1, "  padded  ").title == "padded"
 
-    @pytest.mark.parametrize("bad", ["", "   ", "\t\n"])
+    @pytest.mark.parametrize("bad", ["", "   ", "\t\n",])
     def test_empty_title_rejected(self, bad):
         with pytest.raises(ValueError):
             Task(1, bad)
